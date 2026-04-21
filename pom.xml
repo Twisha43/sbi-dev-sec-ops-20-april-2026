@@ -22,7 +22,7 @@
         <!-- SonarQube configuration — update SONAR_SERVER_IP before scanning -->
         <!-- SonarQube configuration — update SONAR_SERVER_IP before scanning -->
         <sonar.organization>twishadevsecops43</sonar.organization>
-        <sonar.projectKey>twishadevsecops43</sonar.projectKey>
+        <sonar.projectKey>twishadevsecops43_sbi-dev-sec-ops-20-april-2026</sonar.projectKey>
         <sonar.projectName>SBI Loan Management System</sonar.projectName>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>   
         <sonar.java.source>17</sonar.java.source>
