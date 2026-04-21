@@ -11,8 +11,11 @@
 
 # ── Stage 1: Build ────────────────────────────────────────────
 # Full JDK + Maven used only here — never reaches the final image
-#  FROM eclipse-temurin:17-jdk-alpine AS build
-FROM maven:3.9.9-eclipse-temurin-17 AS build
+FROM eclipse-temurin:17-jdk-alpine AS build
+
+# Install Maven (not bundled with eclipse-temurin)
+RUN apk add --no-cache maven
+
 WORKDIR /workspace
 
 # Copy pom.xml first — dependency layer cached separately from source
@@ -20,8 +23,8 @@ COPY pom.xml .
 RUN mvn dependency:go-offline -q 2>/dev/null || true
 
 COPY src ./src
-#RUN mvn clean package -DskipTests -q
-RUN mvn clean package -DskipTests
+RUN mvn clean package -DskipTests -q
+
 # ── Stage 2: Runtime ──────────────────────────────────────────
 # JRE only — no compiler, no Maven, no source code in final image
 FROM eclipse-temurin:17-jre-alpine
