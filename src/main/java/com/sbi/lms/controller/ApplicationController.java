@@ -82,7 +82,6 @@ public class ApplicationController {
         LoanApplication app = applicationService.findById(id);
         LoanApplicationDTO dto = applicationService.toDto(app);
         // LAB 1 FIX: uncomment the line below after adding @PreAuthorize
-   //     dto = maskPiiIfOfficer(dto, auth);
         return ResponseEntity.ok(dto);
         // Funtion working fine
     }
@@ -138,7 +137,7 @@ public class ApplicationController {
         //
         // @RequestParam @NotBlank @Size(max = 100) String branch  ← add validation too
         //
-        // List<LoanApplication> result = applicationService.findByBranchName(branch);
+       
         // return ResponseEntity.ok(result.stream()
         //         .map(applicationService::toDto)
         //         .collect(Collectors.toList()));

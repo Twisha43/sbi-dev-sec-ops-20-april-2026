@@ -46,7 +46,6 @@ public class JwtUtils {
 	// LAB 1 FIX: uncomment these two lines after deleting the hardcoded values
 	// above
 	// @Value("${jwt.secret}")
-	// private String jwtSecret;
 	//
 	// @Value("${jwt.expiration.ms:900000}") // 15 minutes — correct for banking
 	// private long jwtExpirationMs;
